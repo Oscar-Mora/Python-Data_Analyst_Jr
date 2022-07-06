@@ -23,29 +23,38 @@
 ##    run()
     
 #6.2.- Mostrar en pantalla los N primeros números primos. Se pide por teclado la cantidad de números primos que queremos mostrar.
-##def get_cant_primo():
-##    primo = 'Ingrese la cantidad de números primos que desea ver: '
-##    return int(input(primo))
-##
-##def es_primo(num):
-##    cont = 0
-##    for n in range(1, num):
-##        if n % n == 0:
-##            return 
-##    print("Es primo")
-##    return True
-##    
-##def run():
-##    n_primos= get_cant_primo()
-##    
-##    while True:
-##        if  op == 4:
-##            break
-##        else:
-##            op = crear_menu()
-##    
-##if __name__=='__main__':
-##    run()   
+def get_cant_primo():
+    primo = 'Ingrese la cantidad de números primos que desea ver: '
+    return int(input(primo))
+
+def es_primo(num):
+    #descartarémos la prueba de d%1 e iremos a buscar solo la coincidencia de n%n como divisor
+    for n in range(2, num):
+        if num % n == 0:
+            print("No es primo", n, "es divisor")
+            return False
+    print(f"{num}, Es primo")
+    return True
+def crear_listaPrimos(n):
+    a=[]
+    for i in range(0,n):
+       a.append(i)
+    return a
+
+def run():
+    n_p= get_cant_primo()
+    list = crear_listaPrimos(n_p)
+    for i in range (0,len(list)):
+        primos=[]
+        elemento = es_primo(list[i])
+        primos.append(elemento)
+        return True
+    print(primos)
+    
+        
+    
+if __name__=='__main__':
+    run()   
 
 
 # 6.3.-Una persona adquirió un producto para pagar en 20 meses. 

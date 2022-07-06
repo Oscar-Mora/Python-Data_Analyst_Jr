@@ -1,8 +1,57 @@
 #Practica 4
 
-# 4.1 Realizar un programa que inicialice una lista con 10 valores aleatorios (del1 al 10) y posteriormente en pantalla cada elemento de la lista junto con su cuadrado y su cubo(1.2 puntos) 
+# 4.1 Realizar un programa que inicialice una lista con 10 valores aleatorios (del 1 al 10) y posteriormente muestre en pantalla cada elemento de la lista junto con su cuadrado y su cubo(1.2 puntos) 
+import random
+        
+#def calcular_cubo(arr=[a,b,c,d,e,f,g,h,i,j]):
+#    acum = 0
+#    for i in range (1,10):
+def crear_lista(p=[a, b, c, d,e, f, g, h,i,j]):
+    list = []
+    for i in range (0,9):
+        nRand = random.randint(1,10)
+        list.append(nRand)
+    return list 
+def calcular_cuadrado(list):
+    a = []
+    for i in range (0,9): 
+        val = int(p[i])**2
+        a = a.append(val)
+        print(a)
 
-
+def calcular_cubo(p ):
+    
+    for i in range (0,10): 
+        a = []
+        contador = 0
+        val = int(p[i])**3
+        a = a.append(int(val))
+        print (a)
+        
+        
+def run():
+    a = rand()
+    b = rand()
+    c = rand()
+    d = rand()
+    e = rand()
+    f = rand()
+    g = rand()
+    h = rand()
+    i = rand()
+    j = rand()
+    p = [a,b,c,d,e,f,g,h,i,j]
+    #arr = crear_lista(p)
+    print(p)
+    array_x_cuadrado = calcular_cuadrado(p)
+    print(array_x_cuadrado)
+    array_x_cubo = calcular_cubo(p)
+    print(array_x_cubo)
+        
+if __name__ == '__main__':
+    run()
+    
+    
 # 4.2 Crear una lista e inicializarla con 5 cadenas de caracteres leídas por teclado. Copia los elementos de la lista en otra lista, pero en orden inverso, y muestra sus elementos por la pantalla (1.2 puntos) 
 
 
