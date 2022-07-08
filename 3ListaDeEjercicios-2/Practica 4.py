@@ -66,6 +66,53 @@ if __name__ == '__main__':
 #     El programa pedirá el número de alumnos que vamos a introducir, pedira su nombre e irá pidiendo sus notas hasta que introduzcamos un número negativo. 
 #     Al final el programa nos mostrará la lista de alumnos y la nota media obtenida por cada uno de ellos. 
 #     Nota: si se introduce el nombre de un alumno que ya existe el programa nos dará error. (1.2 puntos)
+import math
+def obtener_numRegistros():
+    n = int(input('Ingrese la cantidad de registros que desea hacer: '))
+    return n
+def obtener_nombre():
+    nombres=[]
+    nombre = str(input('Ingrese el nombre del alumno: '))
+    nombres.append(nombre)
+    return nombres
+def obtener_notas():
+    lista=[]
+    while True:
+        nota = float(input('Ingrese la calificación y pulsa ENTER para ingresar la siguiente: '))
+        lista.append(str(nota))
+        if nota < 0:
+            break 
+    return lista
+def sacar_pomedio(lista):
+    n=len(lista)
+    while True:
+        acum=0
+        for i in (0,n):
+          acum = acum + lista[i]
+        return acum
+    prom = acum/len(lista)
+    return acum
+        
+    
+def lista_alumnos(nombre,promedio):
+    dict_from_list = dict(zip(nombre, promedio))
+    return dict_from_list
+def run():
+    n = obtener_numRegistros()
+    for i in range (0,n):
+        nombre = obtener_nombre()
+        notas = obtener_notas()
+        print(len(notas))
+        print(notas[:-1])
+        promedio = sacar_pomedio(notas) 
+        print(promedio)
+        lista=lista_alumnos(nombre,promedio)
+    return lista
+    
+    
+    
+if __name__=='__main__':
+    run()
 
 
 
