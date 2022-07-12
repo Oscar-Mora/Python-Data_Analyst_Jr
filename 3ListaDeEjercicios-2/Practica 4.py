@@ -92,50 +92,6 @@
 #     El programa pedirá el número de alumnos que vamos a introducir, pedira su nombre e irá pidiendo sus notas hasta que introduzcamos un número negativo. 
 #     Al final el programa nos mostrará la lista de alumnos y la nota media obtenida por cada uno de ellos. 
 #     Nota: si se introduce el nombre de un alumno que ya existe el programa nos dará error. (1.2 puntos)
-def cantidad_alumnos():#define cantidad de alumnos
-    cantidad=int(input('Ingrese la cantidad de alumnos a registrar: '))
-    return cantidad
-    
-def obtener_nombre():
-    nombre = str(input('Ingrese el nombre completo del alumno: '))
-    return nombre
-    
-def obtener_notas():#distinta cantidad de notas hasta introducir numero negativo
-    count = 0
-    while True:
-        nota = float(input('Introduzca su nota y de enter para ingresar la siguiente nota: '))
-        count = count + nota
-        if nota < 0:
-            break
-    return count
-    
-def promedio(notas):
-    count = 0
-    promedio = 0
-    while True:
-        for nota in notas:
-            count = count+nota
-            return count
-    
-    promedio = count/len(notas)
-    return promedio
-    
-def creando_alumnos(): #Claves nombre y valores de las notas la funcion debe ser como un constructor
-    alumnos= {}
-    for nombre,notas in alumnos.items():
-        nombre = nombre
-        notas = notas
-        alumnos = {nombre : nombre for alumno in alumnos}
-    return  alumnos
-#En main devuelve nombre de alumno y promedio
-def run():
-    
-    cantidadDeAlumnos = cantidad_alumnos()
-    nombre = obtener_nombre()
-    notas = obtener_notas()
-    
-    lista=alumnos(cantidadDeAlumnos,'oscar',[5,6,7,8,9])
-    
     
 if __name__=='__main__':
     run()
