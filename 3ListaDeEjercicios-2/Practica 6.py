@@ -23,32 +23,42 @@
 ##    run()
     
 #6.2.- Mostrar en pantalla los N primeros números primos. Se pide por teclado la cantidad de números primos que queremos mostrar.
-def get_cant_primo():
-    primo = 'Ingrese la cantidad de números primos que desea ver: '
-    return int(input(primo))
+def obtenerN_primos(msj):
+    num = int(input(msj))
+    return num
+def generar_primo(num):
+    while True:
+        temp = num          # asignamos el numero que nos dan a la variable que sumará los n primos
+        while True:
+            temp += 1        # Para validar si es primo asignamos temp en 1 para recorrer y aumentar el valor de temp
+            
+            contador = 1        # contador validará si contador % temp tiene divisores hasta llevar a temp%temp
+            contador_divisores = 0       # Para contar las divisiones con residuo 0 y validar primo
+            
+            while contador <= temp:      # contador arranca desde 1 hasta temp-valor temporal
+                if temp % contador == 0:         # verifica si tiene divisor
+                    contador_divisores += 1     #si sí. Se registra el divisor encontrado
+                    
+                if contador_divisores > 2:      #Si el contador de divisores es mayor a 2, rompemos ciclo
+                    break                       # porque NO ES PRIMO
+                contador +=1                    # Y aumentamos contador para seguir iterando
+                
+            if contador_divisores ==2:  # Si dentro del validador es primo (while contador <= temp:)
+                yield temp
+                numero = temp
 
-def es_primo(num):
-    #descartarémos la prueba de d%1 e iremos a buscar solo la coincidencia de n%n como divisor
-    for n in range(2, num):
-        if num % n == 0:
-            print("No es primo", n, "es divisor")
-            return False
-    print(f"{num}, Es primo")
-    return True
-def crear_listaPrimos(n):
-    a=[]
-    for i in range(0,n):
-       a.append(i)
-    return a
+#def crear_listaPrimos(n):
+#    a=[]
+#    for i in range(0,n):
+#       a.append(i)
+#    return a
 
 def run():
-    n_p= get_cant_primo()
-    list = crear_listaPrimos(n_p)
-    for i in range (0,len(list)):
-        primos=[]
-        elemento = es_primo(list[i])
-        primos.append(elemento)
-        return True
+    num =obtenerN_primos('Ingrese la cantidad de números primos que desea ver: ')
+    g = generar_primo(num)
+    
+    primos=[next(g) for n in range(num)]
+
     print(primos)
     
         
