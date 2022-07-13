@@ -180,3 +180,5 @@ def run():
 
 if __name__=='__main__':
     run()
+# 4.5 Crear una tupla con los meses del año, pide números al usuario, si el número está entre 1 y la longitud máxima de la tupla, muestra el contenido de esa posición sino muestra un mensaje de error. 
+#     El programa termina cuando el usuario introduce un cero.(1.2 puntos)
