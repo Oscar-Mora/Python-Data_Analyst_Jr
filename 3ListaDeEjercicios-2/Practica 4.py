@@ -70,11 +70,11 @@
 #    return contador
 #    
 #def traer_Nmayor(list):
-#    list.sort()
-#    return list[-1]
+#    maximo=max(list)
+#    return maximo
 #def traer_Nmenor(list):
-#    list.sort()
-#    return list[0]
+#    minimo=min(list)
+#    return minimo
 #def run():
 #    notas= obtener_notas('Ingrese sus 5 notas, pulsa ENTER despues de cada nota ingresada: ')
 #    media = traer_Nmedia(notas)/len(notas)
@@ -92,56 +92,91 @@
 #     El programa pedirá el número de alumnos que vamos a introducir, pedira su nombre e irá pidiendo sus notas hasta que introduzcamos un número negativo. 
 #     Al final el programa nos mostrará la lista de alumnos y la nota media obtenida por cada uno de ellos. 
 #     Nota: si se introduce el nombre de un alumno que ya existe el programa nos dará error. (1.2 puntos)
-def cantidad_alumnos():#define cantidad de alumnos
-    cantidad=int(input('Ingrese la cantidad de alumnos a registrar: '))
-    return cantidad
-    
-def obtener_nombre():
-    nombre = str(input('Ingrese el nombre completo del alumno: '))
-    return nombre
-    
-def obtener_notas():#distinta cantidad de notas hasta introducir numero negativo
-    count = 0
-    while True:
-        nota = float(input('Introduzca su nota y de enter para ingresar la siguiente nota: '))
-        count = count + nota
-        if nota < 0:
-            break
-    return count
-    
-def promedio(notas):
-    count = 0
-    promedio = 0
-    while True:
-        for nota in notas:
-            count = count+nota
-            return count
-    
-    promedio = count/len(notas)
-    return promedio
-    
-def creando_alumnos(): #Claves nombre y valores de las notas la funcion debe ser como un constructor
-    alumnos= {}
-    for nombre,notas in alumnos.items():
-        nombre = nombre
-        notas = notas
-        alumnos = {nombre : nombre for alumno in alumnos}
-    return  alumnos
-#En main devuelve nombre de alumno y promedio
+#Obtener Cantidad de Alumnos a Registrar
+#def cant_alumnos(msj):
+#    cantidad = int(input(msj))
+#    return cantidad
+#    
+##Obtener Nombre del Alumno
+#def obt_nombre(msj):
+#        list = []
+#        nombre = (input(msj))
+#        list.append(nombre)
+#        return list
+#        
+#        
+#def obt_notas(msj):
+#    list= []
+#    nota= int(input(msj))
+#    list.append(nota)
+#    while nota >=0:
+#        nota= int(input(msj))
+#        list.append(nota)
+#        if nota < 0 :
+#           list.pop() 
+#    return list
+#
+#
+#def obt_Media(notas):
+#    acum = 0
+#    list=[]
+#    for i in notas:
+#        acum = acum + i
+#        promedio = acum/len(notas)
+#        list.append(promedio)
+#    return list
+#
+#
+#def objeto_Alumno(nombre,promedio,n):
+#    registro = []
+#    while True:
+#        for i in range (0,n):
+#            registro.append(dict({nombre:promedio}))
+#        return registro    
+#
+#
+#def run():
+#    
+#    nAlumnos=cant_alumnos('Ingrese la cantidad de alumnos que desea capturar: ')
+#    
+#    for i in range(0,nAlumnos):
+#        nombre=obt_nombre('Ingrese el nombre del alumno: ')
+#        notas = obt_notas('Después de cada nota, de ENTER y al finalizar escriba un # Negativo: \n')
+#        promedio = obt_Media(notas)
+#        registro = objeto_Alumno(tuple(nombre),tuple(promedio),nAlumnos)
+#    
+#    
+#    print(registro)
+#    print(nombre)
+#    
+#    print(notas)
+#if __name__=='__main__':
+#    run()
+
+
+
+
+# 4.5 Crear una tupla con los meses del año, pide números al usuario, si el número está entre 1 y la longitud máxima de la tupla, 
+#     muestra el contenido de esa posición sino muestra un mensaje de error. 
+#     El programa termina cuando el usuario introduce un cero.(1.2 puntos)
+def l_meses():
+    meses = ('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre')
+    return meses
+
+
+def traer_mes(msj,meses):
+    mes = int(input(msj))
+    if mes >=1 or mes<=12:
+        i = meses[mes-1]
+    elif mes<1 or mes >12:
+        input('El número debe estar entre 1 y 12, ingrese el número: ')  
+    print( i)
+
+
 def run():
+    meses = l_meses()
+    m_elegido = traer_mes('Escriba el número del mes que desea ver: ',meses)
     
-    cantidadDeAlumnos = cantidad_alumnos()
-    nombre = obtener_nombre()
-    notas = obtener_notas()
-    
-    lista=alumnos(cantidadDeAlumnos,'oscar',[5,6,7,8,9])
-    
-    
+
 if __name__=='__main__':
     run()
-
-
-
-
-# 4.5 Crear una tupla con los meses del año, pide números al usuario, si el número está entre 1 y la longitud máxima de la tupla, muestra el contenido de esa posición sino muestra un mensaje de error. 
-#     El programa termina cuando el usuario introduce un cero.(1.2 puntos)
