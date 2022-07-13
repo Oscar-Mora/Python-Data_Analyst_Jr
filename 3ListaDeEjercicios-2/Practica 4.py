@@ -162,17 +162,23 @@
 def l_meses():
     meses = ('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre')
     return meses
-
-
+    
+    
 def traer_mes(msj,meses):
     mes = int(input(msj))
-    if mes >=1 or mes<=12:
-        i = meses[mes-1]
-    elif mes<1 or mes >12:
-        input('El número debe estar entre 1 y 12, ingrese el número: ')  
-    print( i)
-
-
+    while True:
+        if mes >= 1 and mes <= 12:
+            i = meses[mes-1]
+            print(i)
+            mes= int(input('Escriba el número del mes que desea ver: '))
+        
+        else:
+            if mes == 0:
+                break
+            mes= int(input('El número debe estar entre 1 y 12, ingrese el número: '))
+            
+          
+        
 def run():
     meses = l_meses()
     m_elegido = traer_mes('Escriba el número del mes que desea ver: ',meses)
