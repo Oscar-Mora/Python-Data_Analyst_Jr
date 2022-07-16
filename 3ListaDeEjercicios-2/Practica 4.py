@@ -124,37 +124,33 @@ def run():
 if __name__=='__main__':
     run()
 
+# 4.5 Crear una tupla con los meses del año, pide números al usuario, si el número está entre 1 y la longitud máxima de la tupla, 
+#     muestra el contenido de esa posición sino muestra un mensaje de error. 
+#     El programa termina cuando el usuario introduce un cero.(1.2 puntos)
+def l_meses():
+    meses = ('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre')
+    return meses
+    
+    
+def traer_mes(msj,meses):
+    mes = int(input(msj))
+    while True:
+        if mes >= 1 and mes <= 12:
+            i = meses[mes-1]
+            print(i)
+            mes= int(input('Escriba el número del mes que desea ver: '))
+        
+        else:
+            if mes == 0:
+                break
+            mes= int(input('El número debe estar entre 1 y 12, ingrese el número: '))
+            
+          
+        
+def run():
+    meses = l_meses()
+    m_elegido = traer_mes('Escriba el número del mes que desea ver: ',meses)
+    
 
-
-
-####### 4.5 Crear una tupla con los meses del año, pide números al usuario, si el número está entre 1 y la longitud máxima de la tupla, 
-#######     muestra el contenido de esa posición sino muestra un mensaje de error. 
-#######     El programa termina cuando el usuario introduce un cero.(1.2 puntos)
-#
-#def l_meses():
-#    meses = ('enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre')
-#    return meses
-#
-#
-#def traer_mes(msj,meses):
-#    mes = int(input(msj))
-#    while True:
-#        if mes >=1 and mes <= 12: #AND solo toma los valores dentro de las 2 validaciones
-#            i = meses[mes-1] # se le asigna el valor que me pasen al index, - 1.
-#            mes = int(input(msj))     #volvemos a hacer la validacion por la cual entramos al bucle para que continúe haciendo el ciclo hasta que elijamos 0
-#            print(i)                    # Imprime el valor de i-nombre del mes
-#        else:
-#            if mes == 0:                #SI meten 0 se sale con break
-#                break   
-#            mes = int(input('El número debe estar entre 1 y 12, ingrese el número: '))            #Muy importante volver a hacer la validación si es que queremos que siga testeando
-#            
-#    print( i)
-#
-#
-#def run():
-#    meses = l_meses()
-#    m_elegido = traer_mes('Escriba el número del mes que desea ver: ',meses)
-#    
-#
-#if __name__=='__main__':
-#    run()
+if __name__=='__main__':
+    run()
