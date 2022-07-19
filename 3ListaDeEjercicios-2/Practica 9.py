@@ -30,13 +30,8 @@ if __name__=='__main':
 #9.3_ Obtener la cantidad de elementos mayores a 5 en la tupla.                 ###INCOMPLETO
 def run():
     tupla0 =(5,2,6,7,8,10,77,55,2,1,30,4,2,3)   
-    count = 0
-    acum = 0
-    for i in tupla0:
-        if i > 5:
-            count = tupla0.count()
-            acum.append(i)
-    return contador,acum
+    
+    
     print(count,acum)
     m=(input('ingresa algo'))    
     
