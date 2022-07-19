@@ -14,40 +14,38 @@ def run():
 if __name__ == '__main__':
     run()
 # 8.2_ Escribe un programa que lea una cadena y devuelva un diccionario con la cantidad de apariciones de cada carácter en la cadena.
-#def pedir_palabra(msj):  
-#    palabra = input(msj)
-#    return palabra
-#def destruir_palabra(palabra):
-#    
-#    contar=0
-#    letras = {}
-#    for letra in palabra:
-#        if letra.isalpha():
-#            letras[letra]=[contar]
-#    return letras
-#def checar_letra(palabra):
-#    pass
-#    
-#def run():
-#    palabra = pedir_palabra('Ingrese la palabra que desea: \n ')
-#    contar =destruir_palabra(palabra)
-#
-#    print (contar)
-#    
-#if __name__=='__main__':
-#    run()
-    
+def run():
+    dict = {}
+    cadena = input("Dame una cadena:")
+    for caracter in cadena:
+        if caracter in dict:
+            dict[caracter]+=1
+        else:
+            dict[caracter]=1	
+
+for campo,valor in dict.items():
+	print (campo,"->",valor)
+
+if __name__ == '__main__':
+    run()    
     
 # 8.3_ Vamos a crear un programa en python donde vamos a declarar un diccionario para guardar los precios de las distintas frutas. 
 # El programa pedirá el nombre de la fruta y la cantidad que se ha vendido y nos mostrará el precio final de la fruta a partir de los datos guardados en el diccionario. 
 # Si la fruta no existe nos dará un error. Tras cada consulta el programa nos preguntará si queremos hacer otra consulta
-#def obtener_fruta():
-#    registro_fruta = {}
-#    fruta = input('Ingrese el Nombre de la Frtua y su precio separado por ":" \n')
-#    datos = data.split(':') registro_fruta(datos[0]) = int(datos[1]) 
-#    return registro_fruta
-#def run():
-#    fruta = obtener_fruta()
-#    print(fruta)
-#if __name__ == '__main__':
-#    run()
+def run():
+    precios = {"manzana": 2, "naranja": 1.5, "platano": 4, "piña": 3}
+    while True:
+        fruta = input("Dime la fruta que has vendido:")
+        if fruta.lower() not in precios:
+            print("Fruta no existe.")
+        else:
+            cantidad = int(input("Dime la cantidad de frutas que has vendido:"))
+            print("El precio es de %f" % (cantidad * precios[fruta]))
+        opcion = input("¿Quieres vender otra fruta (s/n)")
+        while opcion.lower() != "s" and opcion.lower() != "n":
+            opcion = input("¿Quieres vender otra fruta (s/n)")
+        if opcion.lower() == "n":
+            break
+
+if __name__ == '__main__':
+    run()  

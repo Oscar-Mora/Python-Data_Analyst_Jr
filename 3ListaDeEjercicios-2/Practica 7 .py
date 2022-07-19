@@ -48,7 +48,7 @@ class Persona:
     @staticmethod ## Para checar si alguien es mayor de edad
     def isAdult(age):
         return age > 18
-persona1=Persona()
+persona1=Persona('Edgar',22)
         
 #7.2_ Crea una clase llamada Cuenta que tendrá los siguientes atributos: titular (que es una persona) y cantidad (puede tener decimales). El titular será obligatorio y la cantidad es opcional. Construye los siguientes métodos para la clase:
 # -     Un constructor, donde los datos puedan estar vacíos.
@@ -57,8 +57,11 @@ persona1=Persona()
 #mostrar(): Muestra los datos de la cuenta.
 #ingresar(cantidad): se ingresa una cantidad a la cuenta, si la cantidad introducida es negativa, nose hará nada.
 #retirar(cantidad): se retira una cantidad a la cuenta. La cuenta puede estar en números rojos.
-class Cuenta:
+#https://github.com/josedom24/curso_cplusplus/blob/master/ejercicios/objetos/ejercicio2.cpp
+#class Cuenta:
     #atributos
+    
+    
 #7.3_ VAmos a definir ahora una "Cuenta Joven", para ello vamos a crear una nueva clase Cuenta Joven que deriva de la anterior.Cuando se crea esta nueva clase, además del titular y la cantidad se debe guardar una bonificación que estará expresada en tanto´por ciento. Construye los siguientes métodos para la clase:
 # -     Un cosntructor.
 # -     Los setters y getters para el nuevo atributo.
