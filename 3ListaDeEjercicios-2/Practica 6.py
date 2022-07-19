@@ -9,28 +9,28 @@ def crear_menu():
     return int(input(menu))
     
 def evaluar_op(op):
-while True:
+    while True:
     #if op == 1:
     #    val=int(input('Ingresa el número que vamos a elevar al cuadrado: \n')
     #    while True:
     #    nn = val**val
     #    return nn
         
-    if op == 2:
-        num1= float(input('dame los dos numeros enteros a multiplicar'))
-        num2= float(input('dame los dos numeros enteros a multiplicar'))
-        multi = num1*num2
-    return multi
-    
-    if op == 3:
-        div1= float(input('dame los dos numeros enteros a multiplicar'))
-        div2= float(input('dame los dos numeros enteros a multiplicar'))
-        div = div1*div2
-        return div 
-    if  op == 4:
-        break
-    else:
-        op = crear_menu()
+    #if op == 2:
+    #    num1= float(input('dame los dos numeros enteros a multiplicar'))
+    #    num2= float(input('dame los dos numeros enteros a multiplicar'))
+    #    multi = num1*num2
+    #return multi
+    #
+    #if op == 3:
+    #    div1= float(input('dame los dos numeros enteros a multiplicar'))
+    #    div2= float(input('dame los dos numeros enteros a multiplicar'))
+    #    div = div1*div2
+    #    return div 
+        if  op == 4:
+            break
+        else:
+            op = crear_menu()
 def run():
     op = crear_menu()
     
