@@ -1,4 +1,4 @@
-#6.1.-Realizar un ejemplo de menú, donde podemos escoger las distintas opciones hasta que seleccionamos la opción de "Salir".
+ de menú, donde podemos escoger las distintas opciones hasta que seleccionamos la opción de "Salir".
 def crear_menu():
     menu = ''' 
         1)Elevar al cuadrado de un número
